@@ -30,9 +30,9 @@ const Menu = ({ stardom }: MenuProps) => {
         {Roti.map((item) => (
           <motion.div
             ref={ref}
-            initial={{ x: item.position === "left" ? -100 : 100, opacity: 0 }}
+            initial={isInView ? { x: 50, opacity: 0 } : { x: -50, opacity: 0 }}
             animate={{
-              x: isInView ? 0 : item.position === "left" ? -100 : 100,
+              x: isInView ? 0 : item.position === "left" ? -50 : 50,
               opacity: isInView ? 1 : 0,
             }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
@@ -53,8 +53,8 @@ const Menu = ({ stardom }: MenuProps) => {
               <Image
                 key={index}
                 src={itemImage}
-                width={400}
-                height={400}
+                width={180}
+                height={180}
                 alt={item.menuTitle}
               />
             ))}

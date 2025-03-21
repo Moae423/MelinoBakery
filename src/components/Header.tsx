@@ -30,8 +30,8 @@ const Header = () => {
   }
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }} // Mulai dari atas dan transparan
-      animate={{ y: 0, opacity: 1 }} // Hilang saat keluar viewport
+      initial={{ x: 0, y: -100, opacity: 0 }} // Mulai dari atas dan transparan
+      animate={{ x: 0, y: 0, opacity: 1 }} // Hilang saat keluar viewport
       transition={{ ease: "easeInOut", duration: 0.7 }}
       className="flex bg-CosmicLatter shadow-2xl shadow-Jet items-center justify-between fixed px-8 py-2 md:py-3 top-5 left-0 right-0 z-50 rounded-full max-w-xs md:max-w-2xl lg:max-w-7xl mx-auto"
     >
