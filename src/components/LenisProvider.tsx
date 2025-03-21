@@ -7,9 +7,10 @@ const LenisProvider = () => {
     const lenis = new Lenis({
       duration: 1.2, // Kontrol kecepatan smooth scroll
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Efek smooth
-      direction: "vertical", // Scroll vertikal
-      gestureDirection: "vertical",
-      smoothTouch: false, // Matikan efek smooth di perangkat touch
+      orientation: "vertical", // Scroll vertikal
+      gestureOrientation: "vertical",
+      touchMultiplier: 2,
+      smoothWheel: true, // Matikan efek smooth di perangkat touch
     });
 
     function raf(time: number) {
