@@ -30,9 +30,9 @@ const Menu = ({ stardom }: MenuProps) => {
         {Roti.map((item) => (
           <motion.div
             ref={ref}
-            initial={isInView ? { x: 50, opacity: 0 } : { x: -50, opacity: 0 }}
+            initial={isInView ? { x: 0, opacity: 0 } : { x: -0, opacity: 0 }}
             animate={{
-              x: isInView ? 0 : item.position === "left" ? -50 : 50,
+              x: isInView ? 0 : item.position === "left" ? -0 : 0,
               opacity: isInView ? 1 : 0,
             }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
