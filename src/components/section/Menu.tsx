@@ -30,12 +30,12 @@ const Menu = ({ stardom }: MenuProps) => {
         {Roti.map((item) => (
           <motion.div
             ref={ref}
-            initial={isInView ? { x: 0, opacity: 0 } : { x: -0, opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             animate={{
-              x: isInView ? 0 : item.position === "left" ? -0 : 0,
+              x: isInView ? 0 : item.position === "left" ? 0 : 0,
               opacity: isInView ? 1 : 0,
             }}
-            transition={{ ease: "easeInOut", duration: 0.8 }}
+            transition={{ ease: "easeInOut", duration: 1 }}
             key={item.id}
             className={`flex flex-col lg:flex-row items-center gap-3  justify-center px-3 md:p-0 lg:p-0 ${
               item.position === "left" ? "flex-col lg:flex-row-reverse" : ""
@@ -51,10 +51,11 @@ const Menu = ({ stardom }: MenuProps) => {
             </div>
             {item.image.map((itemImage, index) => (
               <Image
+                className="w-56 md:w-60 lg:w-96"
                 key={index}
                 src={itemImage}
-                width={180}
-                height={180}
+                width={400}
+                height={400}
                 alt={item.menuTitle}
               />
             ))}
